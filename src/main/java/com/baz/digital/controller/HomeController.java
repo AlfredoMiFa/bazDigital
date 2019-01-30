@@ -47,9 +47,9 @@ public class HomeController {
 		return ResponseEntity.ok(cita);
 	}
 	
-	@RequestMapping(value="/actualizar/{id}", method=RequestMethod.PUT)
+	@RequestMapping(value="/actualizar/", method=RequestMethod.PUT)
 	@ApiOperation(value = "Actualizamos cita", notes = "Actualizamos la cita")
-	public ResponseEntity<Void> actualizarCita(@PathVariable("id") ObjectId id,@Valid @RequestBody Cita cita) {
+	public ResponseEntity<Void> actualizarCita(@Valid @RequestBody Cita cita) {
 		citaService.updateCita(cita);
 		return ResponseEntity.noContent().build();
 	}
